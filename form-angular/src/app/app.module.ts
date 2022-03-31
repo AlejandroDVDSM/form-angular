@@ -15,6 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -25,15 +28,16 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
     MatButtonModule,
     MatGridListModule,
-    FormsModule,
     MatCardModule,
     MatIconModule,
+    MatSnackBarModule
 
   ],
   providers: [],

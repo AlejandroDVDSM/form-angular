@@ -54,8 +54,8 @@
             </mat-radio-group>
         </mat-grid-tile>
 
-        <mat-grid-tile> <!-- ; openSnackBar('Programmer created', 'Dismiss')" -->
-            <button mat-raised-button color="primary" (click)="createProgrammer()">Create</button>
+        <mat-grid-tile>
+            <button mat-raised-button color="primary" (click)="createProgrammer()" (click)="openSnackBar('Programmer created', 'Dismiss')">Create</button>
         </mat-grid-tile>
         
     </mat-grid-list>
@@ -72,8 +72,8 @@
             </ul>
         </mat-card-content>
         <mat-card-footer>{{ programmer.rol }}</mat-card-footer>
-        <mat-card-actions> <!-- ; openSnackBar('Programmer deleted', 'Dismiss') -->
-            <button mat-fab color="warn" (click)="deleteProgrammer(programmer.id)">
+        <mat-card-actions>
+            <button mat-fab color="warn" (click)="deleteProgrammer(programmer.id)" (click)="openSnackBar('Programmer deleted', 'Dismiss')">
                 <mat-icon>delete</mat-icon>
             </button>
         </mat-card-actions>

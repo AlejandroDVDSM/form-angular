@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from "uuid";
 import { NgForm } from '@angular/forms';
-//import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Programmer {
   id: string
@@ -19,7 +19,7 @@ interface Programmer {
 })
 export class FormComponent implements OnInit {
 
-  constructor(/*private snackBar: MatSnackBar*/) { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void { }
 
@@ -36,9 +36,9 @@ export class FormComponent implements OnInit {
     form.reset();
   }
   
-  /*openSnackBar(message: string, action: string) {
+  openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {duration: 2000});
-  }*/
+  }
 
   /* CRUD FUNCTIONS */
   createProgrammer(): void {
