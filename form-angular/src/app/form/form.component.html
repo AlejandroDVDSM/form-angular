@@ -1,0 +1,64 @@
+<form class="form">
+    <mat-grid-list cols="2" rowHeight="fit" class="grid-list">
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label >Name</mat-label>
+                <input matInput [(ngModel)]="name" name="name" required>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input type="tel" matInput [(ngModel)]="phone" name="phone" required>
+            </mat-form-field>    
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [(ngModel)]="email" name="email" required>
+            </mat-form-field>    
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+            <mat-form-field>
+                <mat-select type="tools" [(ngModel)]="tools" name="tools" multiple required>
+                    <mat-label>Tools Used</mat-label>
+                    <mat-option>None</mat-option>
+                    
+                    <mat-optgroup label="Web">
+                        <mat-option value="Angular">Angular</mat-option>
+                        <mat-option value="React">React</mat-option>
+                        <mat-option value="Vue">Vue</mat-option>
+                    </mat-optgroup>
+                    
+                    <mat-optgroup label="Videogames">
+                        <mat-option value="Unity">Unity</mat-option>
+                        <mat-option value="Unreal Engine">Unreal Engine</mat-option>
+                    </mat-optgroup>
+                    
+                    <mat-optgroup label="Mobile">
+                        <mat-option value="Swift">Swift</mat-option>
+                        <mat-option value="Ionic">Ionic</mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>            
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-radio-group type="rol" [(ngModel)]="rol" name="rol" required>
+                <mat-radio-button value="Student" class="radio-button">Student</mat-radio-button>
+                <mat-radio-button value="Junior" class="radio-button">Junior</mat-radio-button>
+                <mat-radio-button value="Senior" class="radio-button">Senior</mat-radio-button>
+            </mat-radio-group>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <button mat-raised-button color="primary" (click)="createProgrammer()">Create</button>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+</form>
+
+<h1 *ngIf="programmers.length > 0"> {{ tools }} </h1>
