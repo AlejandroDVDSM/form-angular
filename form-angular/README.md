@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
+form-angular is an implementation of a simple form that allow the user to create an entry, read it, updated it or delete it. This is done with the help of [Angular Material](https://material.angular.io). 
+
+The link to the deployment of the application is the next: [https://crud-form-angular.netlify.app](https://crud-form-angular.netlify.app).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
