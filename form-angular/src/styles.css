@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form {
+    margin: 2em;
+}
+
+.grid-list {
+    height: 250px;
+    width: 500px;
+}
+
+.radio-button {
+    margin: .8em 2em
+}

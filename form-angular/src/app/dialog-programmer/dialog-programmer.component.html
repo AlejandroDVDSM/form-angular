@@ -54,6 +54,5 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="updateProgrammer(data.edit_programmer.id)">Edit</button>
-
+    <button mat-raised-button color="primary" (click)="updateProgrammer()" (click)="openSnackBar('Programmer edited', 'Dismiss')">Edit</button>
 </mat-dialog-actions>

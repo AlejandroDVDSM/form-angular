@@ -60,21 +60,21 @@
 </form>
 
 <!-- This <div> will display the card of all programmers -->
-<div *ngIf="programmers.length > 0">
+<div *ngIf="programmers.length > 0" class="grid-container">
     <mat-card *ngFor="let programmer of programmers" class="programmer-card">
-        <mat-card-title>{{ programmer.name }}</mat-card-title>
-        <mat-card-subtitle>Phone: {{ programmer.phone }} | Email: {{ programmer.email }}</mat-card-subtitle>
+        <mat-card-title class="card-title">{{ programmer.name }} ({{ programmer.rol }})</mat-card-title>
+        <mat-card-subtitle>Phone: {{ programmer.phone }}</mat-card-subtitle>
+        <mat-card-subtitle>Email: {{ programmer.email }}</mat-card-subtitle>
         <mat-card-content>
             <ul>
                 <li *ngFor="let tool of programmer.tools"> {{ tool }}</li>
             </ul>
         </mat-card-content>
-        <mat-card-footer>{{ programmer.rol }}</mat-card-footer>
         <mat-card-actions>
-            <button mat-fab color="warn" (click)="deleteProgrammer(programmer.id)" (click)="openSnackBar('Programmer deleted', 'Dismiss')">
+            <button class="card-action" mat-fab color="warn" (click)="deleteProgrammer(programmer.id)" (click)="openSnackBar('Programmer deleted', 'Dismiss')">
                 <mat-icon>delete</mat-icon>
             </button>
-            <button mat-fab color="primary" (click)="openDialog(programmer)">
+            <button class="card-action" mat-fab color="primary" (click)="openDialog(programmer)">
                 <mat-icon>edit</mat-icon>
             </button>
         </mat-card-actions>
