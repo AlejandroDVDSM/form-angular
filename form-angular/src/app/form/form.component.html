@@ -1,4 +1,4 @@
-<form class="form">
+<form #form="ngForm" (ngSubmit)="completeSubmit(form)" class="form">
     <mat-grid-list cols="2" rowHeight="fit" class="grid-list">
         <mat-grid-tile>
             <mat-form-field>
@@ -55,10 +55,27 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <button mat-raised-button color="primary" (click)="createProgrammer()">Create</button>
+            <button mat-raised-button color="primary" (click)="createProgrammer(); openSnackBar('Programmer created', 'Dismiss')">Create</button>
         </mat-grid-tile>
         
     </mat-grid-list>
 </form>
 
-<h1 *ngIf="programmers.length > 0"> {{ tools }} </h1>
+<!-- This <div> will display the card of all programmers -->
+<div *ngIf="programmers.length > 0" >
+    <mat-card *ngFor="let programmer of programmers" class="programmer-card">
+        <mat-card-title>{{ programmer.name }}</mat-card-title>
+        <mat-card-subtitle>Phone: {{ programmer.phone }} | Email: {{ programmer.email }}</mat-card-subtitle>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let tool of programmer.tools"> {{ tool }}</li>
+            </ul>
+        </mat-card-content>
+        <mat-card-footer>{{ programmer.rol }}</mat-card-footer>
+        <mat-card-actions>
+            <button mat-fab color="warn" (click)="deleteProgrammer(programmer.id); openSnackBar('Programmer deleted', 'Dismiss')">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

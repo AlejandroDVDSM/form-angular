@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatRadioModule,
     MatButtonModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
