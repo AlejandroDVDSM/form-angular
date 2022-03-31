@@ -53,7 +53,7 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-            <button mat-raised-button color="primary" (click)="createProgrammer()" (click)="openSnackBar('Programmer created', 'Dismiss')">Create</button>
+            <button mat-raised-button color="primary" (click)="createProgrammer()">Create</button>
         </mat-grid-tile>
         
     </mat-grid-list>
@@ -71,7 +71,7 @@
             </ul>
         </mat-card-content>
         <mat-card-actions>
-            <button class="card-action" mat-fab color="warn" (click)="deleteProgrammer(programmer.id)" (click)="openSnackBar('Programmer deleted', 'Dismiss')">
+            <button class="card-action" mat-fab color="warn" (click)="deleteProgrammer(programmer.id)">
                 <mat-icon>delete</mat-icon>
             </button>
             <button class="card-action" mat-fab color="primary" (click)="openDialog(programmer)">

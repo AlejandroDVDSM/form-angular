@@ -48,20 +48,27 @@ export class FormComponent implements OnInit {
 
   /* CRUD FUNCTIONS */
   createProgrammer(): void {
-    let newProgrammer: Programmer = {
-      id: uuidv4(),
-      name: this.name,
-      phone: this.phone,
-      email: this.email,
-      rol: this.rol,
-      tools: this.tools
-    }
+    if (this.name != "" && this.phone != "" && this.email != "" && this.rol != "" && this.tools.length != 0) {
+      let newProgrammer: Programmer = {
+        id: uuidv4(),
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        rol: this.rol,
+        tools: this.tools
+      }
+  
+      this.programmers.push(newProgrammer);
 
-    this.programmers.push(newProgrammer);
+      this.openSnackBar('Programmer created', 'Dismiss');
+    } else {
+      this.openSnackBar('Please, fill the required fields', 'Dismiss');
+    }
   }
 
   deleteProgrammer(id: string): void {
-    this.programmers = this.programmers.filter((programmer) => programmer.id != id)
-    this.programmers.filter((p) => p.id == id)
+    this.programmers = this.programmers.filter((programmer) => programmer.id != id);
+    this.programmers.filter((p) => p.id == id);
+    this.openSnackBar('Programmer deleted', 'Dismiss');
   }
 }

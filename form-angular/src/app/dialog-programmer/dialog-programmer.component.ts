@@ -19,15 +19,21 @@ export class DialogProgrammerComponent implements OnInit {
   newRol: string = this.data.edit_programmer.rol;
   newTools: string[] = this.data.edit_programmer.tools;
 
-  updateProgrammer(): void {
-    this.data.edit_programmer.name = this.newName
-    this.data.edit_programmer.email = this.newEmail
-    this.data.edit_programmer.phone = this.newPhone
-    this.data.edit_programmer.tools = this.newTools
-    this.data.edit_programmer.rol = this.newRol
-  }
-
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {duration: 2000});
   }
+
+  updateProgrammer(): void {
+    if (this.newName != "" && this.newPhone != "" && this.newEmail != "" && this.newRol != "" && this.newTools.length != 0) {
+      this.data.edit_programmer.name = this.newName
+      this.data.edit_programmer.email = this.newEmail
+      this.data.edit_programmer.phone = this.newPhone
+      this.data.edit_programmer.tools = this.newTools
+      this.data.edit_programmer.rol = this.newRol
+      this.openSnackBar('Programmer edited', 'Dismiss');
+    } else {
+      this.openSnackBar('Please, fill the required field', 'Dismiss');
+    }
+  }
+
 }

@@ -1,3 +1,8 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
+
 .programmer-card {
     margin: 2em;
     max-width: 400px;
