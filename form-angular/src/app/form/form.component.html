@@ -25,8 +25,6 @@
             <mat-form-field>
                 <mat-select type="tools" [(ngModel)]="tools" name="tools" multiple required>
                     <mat-label>Tools Used</mat-label>
-                    <mat-option>None</mat-option>
-                    
                     <mat-optgroup label="Web">
                         <mat-option value="Angular">Angular</mat-option>
                         <mat-option value="React">React</mat-option>
@@ -45,7 +43,7 @@
                 </mat-select>
             </mat-form-field>            
         </mat-grid-tile>
-
+        
         <mat-grid-tile>
             <mat-radio-group type="rol" [(ngModel)]="rol" name="rol" required>
                 <mat-radio-button value="Student" class="radio-button">Student</mat-radio-button>
@@ -62,7 +60,7 @@
 </form>
 
 <!-- This <div> will display the card of all programmers -->
-<div *ngIf="programmers.length > 0" >
+<div *ngIf="programmers.length > 0">
     <mat-card *ngFor="let programmer of programmers" class="programmer-card">
         <mat-card-title>{{ programmer.name }}</mat-card-title>
         <mat-card-subtitle>Phone: {{ programmer.phone }} | Email: {{ programmer.email }}</mat-card-subtitle>
@@ -75,6 +73,9 @@
         <mat-card-actions>
             <button mat-fab color="warn" (click)="deleteProgrammer(programmer.id)" (click)="openSnackBar('Programmer deleted', 'Dismiss')">
                 <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-fab color="primary" (click)="openDialog(programmer)">
+                <mat-icon>edit</mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>

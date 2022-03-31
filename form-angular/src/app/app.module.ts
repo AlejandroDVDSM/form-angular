@@ -16,14 +16,17 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogProgrammerComponent } from './dialog-programmer/dialog-programmer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    DialogProgrammerComponent
   ],
+  entryComponents: [DialogProgrammerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +40,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatGridListModule,
     MatCardModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
 
   ],
   providers: [],

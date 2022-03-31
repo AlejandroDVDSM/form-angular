@@ -1,0 +1,59 @@
+<h2 mat-dialog-title> {{ data.edit_programmer.name }}</h2>
+<mat-dialog-content>
+    <form class="form">
+        <mat-grid-list cols="2" rowHeight="fit" class="grid-list">
+            <mat-grid-tile>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="newName" name="newName" value="{{ data.edit_programmer.name }}" required>
+                </mat-form-field>
+            </mat-grid-tile>
+    
+            <mat-grid-tile>
+                <mat-form-field>
+                    <input type="tel" [(ngModel)]="newPhone" matInput name="newPhone" value="{{ data.edit_programmer.phone }}" required>
+                </mat-form-field>    
+            </mat-grid-tile>
+    
+            <mat-grid-tile>
+                <mat-form-field>
+                    <input type="email" matInput [(ngModel)]="newEmail" name="newEmail" value="{{ data.edit_programmer.email }}" required>
+                </mat-form-field>    
+            </mat-grid-tile>
+            
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-select type="tools" [(ngModel)]="newTools" name="newTools" multiple required>
+                        <mat-optgroup label="Web">
+                            <mat-option value="Angular">Angular</mat-option>
+                            <mat-option value="React">React</mat-option>
+                            <mat-option value="Vue">Vue</mat-option>
+                        </mat-optgroup>
+                        
+                        <mat-optgroup label="Videogames">
+                            <mat-option value="Unity">Unity</mat-option>
+                            <mat-option value="Unreal Engine">Unreal Engine</mat-option>
+                        </mat-optgroup>
+                        
+                        <mat-optgroup label="Mobile">
+                            <mat-option value="Swift">Swift</mat-option>
+                            <mat-option value="Ionic">Ionic</mat-option>
+                        </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>            
+            </mat-grid-tile>
+            
+            <mat-grid-tile>
+                <mat-radio-group type="rol" [(ngModel)]="newRol" name="newRol" value="{{ this.data.edit_programmer.rol }}" required>
+                    <mat-radio-button value="Student" class="radio-button">Student</mat-radio-button>
+                    <mat-radio-button value="Junior" class="radio-button">Junior</mat-radio-button>
+                    <mat-radio-button value="Senior" class="radio-button">Senior</mat-radio-button>
+                </mat-radio-group>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="updateProgrammer(data.edit_programmer.id)">Edit</button>
+
+</mat-dialog-actions>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from "uuid";
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogProgrammerComponent } from '../dialog-programmer/dialog-programmer.component';
 
 interface Programmer {
   id: string
@@ -19,7 +21,7 @@ interface Programmer {
 })
 export class FormComponent implements OnInit {
 
-  constructor(private snackBar: MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog) { }
 
   ngOnInit(): void { }
 
@@ -40,6 +42,10 @@ export class FormComponent implements OnInit {
     this.snackBar.open(message, action, {duration: 2000});
   }
 
+  openDialog(programmer: Programmer) {
+    this.dialog.open(DialogProgrammerComponent, {data: {programmers: this.programmers, edit_programmer: programmer}});
+  }
+
   /* CRUD FUNCTIONS */
   createProgrammer(): void {
     let newProgrammer: Programmer = {
@@ -52,10 +58,10 @@ export class FormComponent implements OnInit {
     }
 
     this.programmers.push(newProgrammer);
-    console.log(this.programmers)
   }
 
   deleteProgrammer(id: string): void {
     this.programmers = this.programmers.filter((programmer) => programmer.id != id)
+    this.programmers.filter((p) => p.id == id)
   }
 }
