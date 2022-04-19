@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
-form-angular is an implementation of a simple form that allow the user to create an entry, read it, updated it or delete it. This is done with the help of [Angular Material](https://material.angular.io). 
+form-angular is an implementation of a simple form that allow the user to create an entry, read it, updated it or delete it. This is done with the help of [Angular Material](https://material.angular.io).
+
+The user must fill the fields ("Name", "Phone", "Email" and "Tools used") to create a "programmer". When the programmer is created, a card containing the details of that programmer is created too. You can also edit or delete that programmer.
 
 The link to the deployment of the application is the next: [https://crud-form-angular.netlify.app](https://crud-form-angular.netlify.app).
 
